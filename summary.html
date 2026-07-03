@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><title>Сводка синхронизации</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',Arial,sans-serif;margin:20px;background:#f0f2f5}.container{max-width:1500px;margin:0 auto}h1{color:#1a1a2e;margin-bottom:5px}.subtitle{color:#666;margin-bottom:15px;font-size:14px}.info-bar{display:flex;gap:15px;flex-wrap:wrap;margin-bottom:20px}.info-item{background:white;padding:8px 16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.1);font-size:13px}.info-item strong{color:#1a1a2e}.info-item.clickable{cursor:pointer;transition:all 0.2s}.info-item.clickable:hover{background:#e3f2fd}.stats-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-bottom:20px}.stat-card{background:white;padding:15px;border-radius:10px;box-shadow:0 2px 4px rgba(0,0,0,0.1);text-align:center}.stat-card .number{font-size:24px;font-weight:bold}.stat-card .label{color:#666;font-size:12px;margin-top:3px}.stat-card.total .number{color:#2196F3}.stat-card.updated .number{color:#4CAF50}.stat-card.outdated .number{color:#ff9800}.stat-card.notupdated .number{color:#f44336}.stat-card.errors .number{color:#E91E63}.stat-card.lowdisk .number{color:#f44336}.stat-card.percent .number{color:#9C27B0}.section-title{font-size:16px;margin:20px 0 10px;color:#333}.table-wrapper{overflow-x:auto}table{width:100%;border-collapse:collapse;background:white;border-radius:10px;overflow:hidden;box-shadow:0 2px 4px rgba(0,0,0,0.1);font-size:13px}th{background:#1a1a2e;color:white;padding:10px 6px;text-align:center;font-weight:500;font-size:10px;text-transform:uppercase;cursor:pointer;user-select:none;position:relative;white-space:nowrap}th:hover{background:#2a2a4e}th .sort-arrow{font-size:9px;margin-left:2px;opacity:0.5}th.sorted .sort-arrow{opacity:1}td{padding:6px 6px;border-bottom:1px solid #eee;text-align:center;font-size:12px;vertical-align:middle}td.left{text-align:left}tr:hover{background-color:#f8f9fa}.badge{padding:3px 7px;border-radius:12px;font-size:10px;font-weight:600;display:inline-block;white-space:nowrap}.badge-success{background:#d4edda;color:#155724}.badge-warning{background:#fff3cd;color:#856404}.badge-danger{background:#f8d7da;color:#721c24}.row-outdated{background-color:#fffbf0}.row-notupdated{background-color:#fff5f5}.match-bar{display:inline-block;width:45px;height:5px;background:#e0e0e0;border-radius:3px;vertical-align:middle;margin-right:3px}.match-bar-fill{height:5px;border-radius:3px}.match-high{background:#4CAF50}.match-mid{background:#ff9800}.match-low{background:#f44336}.disk-model{font-size:10px;color:#444;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block}.smart-link{color:#1976D2;cursor:pointer;text-decoration:underline;font-size:10px;white-space:nowrap}.smart-link:hover{color:#0D47A1}.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.5)}.modal-content{background:white;margin:3% auto;padding:0;border-radius:12px;width:600px;max-width:90%;max-height:85%;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3);display:flex;flex-direction:column}.modal-header{padding:15px 20px;background:#1a1a2e;color:white;border-radius:12px 12px 0 0;display:flex;justify-content:space-between;align-items:center}.modal-header h2{font-size:16px;margin:0}.modal-close{color:white;font-size:22px;cursor:pointer;background:none;border:none}.modal-close:hover{color:#f44336}.modal-body{padding:15px 20px;overflow-y:auto}.tree-folder{font-weight:600;color:#1a1a2e;margin:8px 0 4px}.tree-file{padding:2px 0 2px 20px;font-size:12px;color:#555;font-family:'Consolas',monospace}.modal-footer{padding:10px 20px;background:#f5f5f5;border-radius:0 0 12px 12px;display:flex;gap:10px;justify-content:flex-end}.btn{padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500}.btn-primary{background:#1976D2;color:white}.btn-primary:hover{background:#1565C0}.btn-secondary{background:#e0e0e0;color:#333}.btn-secondary:hover{background:#ccc}.footer{margin-top:20px;color:#999;font-size:11px;text-align:center}
+</style></head><body><div class="container">
+<h1>📊 Сводка синхронизации</h1>
+<p class="subtitle">Сформировано: 2026-07-03 21:15:13 | ❌ Нет связи > 48 ч | Клик по заголовку — сортировка | Клик по ошибкам — детали</p>
+<div class="info-bar">
+<div class="info-item">📦 <strong>Манифест:</strong> v20260703.1127</div>
+<div class="info-item clickable" onclick="showManifestFiles()">📁 <strong>Файлов:</strong> 72</div>
+<div class="info-item">💾 <strong>Объём:</strong> 2.10 GB</div>
+<div class="info-item">🖥 <strong>Компьютеров:</strong> 6</div>
+</div>
+<div class="stats-grid">
+<div class="stat-card total"><div class="number">6</div><div class="label">Всего</div></div>
+<div class="stat-card updated"><div class="number">6</div><div class="label">✅ Актуальны</div></div>
+<div class="stat-card outdated"><div class="number">0</div><div class="label">⚠ Устарела версия</div></div>
+<div class="stat-card notupdated"><div class="number">0</div><div class="label">❌ Нет связи</div></div>
+<div class="stat-card errors"><div class="number">0</div><div class="label">С ошибками</div></div>
+<div class="stat-card lowdisk"><div class="number">0</div><div class="label">⚠ Мало места</div></div>
+<div class="stat-card percent"><div class="number">100%</div><div class="label">Актуальных</div></div>
+</div>
+<div class="section-title">📋 Компьютеры</div><div class="table-wrapper"><table id="mainTable"><thead>
+<tr>
+<th onclick="sortTable(0)">№</th>
+<th class="left" onclick="sortTable(1)">Компьютер</th>
+<th onclick="sortTable(2)">Статус</th>
+<th onclick="sortTable(3)">Версия</th>
+<th onclick="sortTable(4)">Синхр.</th>
+<th onclick="sortTable(5)">Когда</th>
+<th onclick="sortTable(6)">Файлы</th>
+<th onclick="sortTable(7)">Актуал.</th>
+<th onclick="sortTable(8)">Диск</th>
+<th onclick="sortTable(9)">SMART</th>
+<th onclick="sortTable(10)">Ошибок</th>
+</tr>
+</thead><tbody><tr class="" data-computer="HOMESYSTEM" data-status="1" data-version="20260703.1127" data-sync="202607031455" data-when="6,3" data-files="72" data-match="100,0" data-disk="200,6" data-health="Good" data-errors="0" data-errors-details=''>
+<td>1</td><td class="left"><strong>HOMESYSTEM</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 14:55</td><td>6.3 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-mid' style='width:23%'></div></div><br>200.6 / 880.6 GB</td><td class="smart-cell"><span class='disk-model' title='WDC WD10SPSX-00A6WT0'>WDC WD10SPSX-00A6WT0</span><br><span class='badge badge-success'>Хорошо (100%)</span> <br><span class='smart-link' onclick='showSmart(0)'>SMART 🔍</span></td><td>0</td>
+</tr><tr class="" data-computer="KASSA377" data-status="1" data-version="20260703.1127" data-sync="202607031301" data-when="8,2" data-files="72" data-match="100,0" data-disk="169,5" data-health="Good" data-errors="0" data-errors-details=''>
+<td>2</td><td class="left"><strong>KASSA377</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 13:01</td><td>8.2 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-high' style='width:77%'></div></div><br>169.5 / 221.1 GB</td><td class="smart-cell"><span class='disk-model' title='ATA ST500DM002-1BD14'>ATA ST500DM002-1BD14</span><br><span class='badge badge-success'>Хорошо (100%)</span> <br><span class='smart-link' onclick='showSmart(1)'>SMART 🔍</span></td><td>0</td>
+</tr><tr class="" data-computer="KASSA277" data-status="1" data-version="20260703.1127" data-sync="202607031202" data-when="9,2" data-files="72" data-match="100,0" data-disk="68,5" data-health="Хорошо" data-errors="0" data-errors-details=''>
+<td>3</td><td class="left"><strong>KASSA277</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 12:02</td><td>9.2 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-high' style='width:58%'></div></div><br>68.5 / 118.6 GB</td><td class="smart-cell"><span class='disk-model' title='Netac SSD 128GB'>Netac SSD 128GB</span><br><span class='badge badge-success'>Хорошо (100%)</span> <br><span class='smart-link' onclick='showSmart(2)'>SMART 🔍</span></td><td>0</td>
+</tr><tr class="" data-computer="KASSA177" data-status="1" data-version="20260703.1127" data-sync="202607031156" data-when="9,3" data-files="72" data-match="100,0" data-disk="74,7" data-health="Хорошо" data-errors="0" data-errors-details=''>
+<td>4</td><td class="left"><strong>KASSA177</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 11:56</td><td>9.3 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-high' style='width:63%'></div></div><br>74.7 / 119.2 GB</td><td class="smart-cell"><span class='disk-model' title='HS-SSD-E100 128G'>HS-SSD-E100 128G</span><br><span class='badge badge-success'>Хорошо (100%)</span> <br><span class='smart-link' onclick='showSmart(3)'>SMART 🔍</span></td><td>0</td>
+</tr><tr class="" data-computer="CUPER" data-status="1" data-version="20260703.1127" data-sync="202607031153" data-when="9,4" data-files="72" data-match="100,0" data-disk="540,7" data-health="Хорошо" data-errors="0" data-errors-details=''>
+<td>5</td><td class="left"><strong>CUPER</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 11:53</td><td>9.4 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-high' style='width:65%'></div></div><br>540.7 / 837.4 GB</td><td class="smart-cell"><span class='disk-model' title='Samsung SSD 980 1TB'>Samsung SSD 980 1TB</span><br><span class='badge badge-success'>Хорошо (93%)</span> <br><span class='smart-link' onclick='showSmart(4)'>SMART 🔍</span></td><td>0</td>
+</tr><tr class="" data-computer="SERVER1004" data-status="1" data-version="20260703.1127" data-sync="202607031141" data-when="9,6" data-files="72" data-match="100,0" data-disk="51,6" data-health="Хорошо" data-errors="0" data-errors-details=''>
+<td>6</td><td class="left"><strong>SERVER1004</strong></td>
+<td><span class='badge badge-success'>✅ Актуален</span></td><td><span class='badge badge-success'>20260703.1127</span></td><td>2026-07-03 11:41</td><td>9.6 ч</td>
+<td>72 / 72</td><td><div class='match-bar'><div class='match-bar-fill match-high' style='width:100%'></div></div> 100%</td>
+<td class="disk-cell"><div class='match-bar'><div class='match-bar-fill match-mid' style='width:23%'></div></div><br>51.6 / 223 GB</td><td class="smart-cell"><span class='disk-model' title='ST1000DM010-2EP102'>ST1000DM010-2EP102</span><br><span class='badge badge-success'>Хорошо (81%)</span> <br><span class='smart-link' onclick='showSmart(5)'>SMART 🔍</span></td><td>0</td>
+</tr></tbody></table></div>
+<div class="footer">E:\Kassa\stats | ❌ Нет связи > 48 ч</div></div>
+
+<div id="fileModal" class="modal"><div class="modal-content">
+<div class="modal-header"><h2 id="modalTitle">📁 Файлы в манифесте</h2><button class="modal-close" onclick="closeModal('fileModal')">&times;</button></div>
+<div class="modal-body" id="fileModalBody"></div>
+<div class="modal-footer">Всего файлов: <strong id="modalFileCount">0</strong></div>
+</div></div>
+
+<div id="smartModal" class="modal"><div class="modal-content">
+<div class="modal-header"><h2 id="smartTitle">🔬 S.M.A.R.T.</h2><button class="modal-close" onclick="closeModal('smartModal')">&times;</button></div>
+<div class="modal-body" id="smartBody"></div>
+<div class="modal-footer"><button class="btn btn-primary" id="copySmartBtn" onclick="copySmartData()">📋 Копировать</button><button class="btn btn-secondary" onclick="closeModal('smartModal')">Закрыть</button></div>
+</div></div>
+
+<script>
+var data = [{"ComputerName":"HOMESYSTEM","DiskModel":"WDC WD10SPSX-00A6WT0","DiskHealth":"Good","DiskHealthPercent":100,"DiskTemp":0,"DiskPowerHours":0,"DiskPowerOnCount":0,"DiskReadGB":0,"DiskWriteGB":0},{"ComputerName":"KASSA377","DiskModel":"ATA ST500DM002-1BD14","DiskHealth":"Good","DiskHealthPercent":100,"DiskTemp":0,"DiskPowerHours":0,"DiskPowerOnCount":0,"DiskReadGB":0,"DiskWriteGB":0},{"ComputerName":"KASSA277","DiskModel":"Netac SSD 128GB","DiskHealth":"Хорошо","DiskHealthPercent":100,"DiskTemp":37,"DiskPowerHours":15854,"DiskPowerOnCount":39,"DiskReadGB":8416,"DiskWriteGB":6684},{"ComputerName":"KASSA177","DiskModel":"HS-SSD-E100 128G","DiskHealth":"Хорошо","DiskHealthPercent":100,"DiskTemp":21,"DiskPowerHours":18949,"DiskPowerOnCount":112,"DiskReadGB":4660,"DiskWriteGB":4714},{"ComputerName":"CUPER","DiskModel":"Samsung SSD 980 1TB","DiskHealth":"Хорошо","DiskHealthPercent":93,"DiskTemp":44,"DiskPowerHours":23037,"DiskPowerOnCount":3354,"DiskReadGB":56318,"DiskWriteGB":54529},{"ComputerName":"SERVER1004","DiskModel":"ST1000DM010-2EP102","DiskHealth":"Хорошо","DiskHealthPercent":81,"DiskTemp":40,"DiskPowerHours":23689,"DiskPowerOnCount":55,"DiskReadGB":0,"DiskWriteGB":24395}];
+var manifestTree = {"7zip":["7z2501-x32.exe","7z2501-x64.exe"],"Offis":["Office2016-2021-x64.exe"],"(корень)":["driver_booster_setup.exe","AnyDesk.exe","ClassicShellSetup_4_3_1-ru.exe","Advanced_IP_Scanner_2.5.3850.exe","windirstat1_1_2_setup.exe","npp.7.9.3.Installer.exe"],"HHD_Ytility":["CrystalDiskInfo/DiskInfo32.exe","CrystalDiskInfo/CdiResource/language/Japanese.lang","CrystalDiskInfo/CdiResource/language/German.lang","CrystalDiskInfo/CdiResource/language/Greek.lang","CrystalDiskInfo/CdiResource/language/Slovak.lang","CrystalDiskInfo/CdiResource/language/Serbian.lang","CrystalDiskInfo/CdiResource/language/Galician.lang","CrystalDiskInfo/ReadMe.txt","CrystalDiskInfo/CdiResource/language/Swedish.lang","CrystalDiskInfo/CdiResource/language/Italian.lang","CrystalDiskInfo/CdiResource/dialog/Option.html","CrystalDiskInfo/CdiResource/language/Azeri.lang","CrystalDiskInfo/CdiResource/dialog/flot/jquery.flot.min.js","CrystalDiskInfo/CdiResource/language/Hungarian.lang","CrystalDiskInfo/CdiResource/language/Armenian.lang","CrystalDiskInfo/CdiResource/System.Buffers.dll","CrystalDiskInfo/CdiResource/dialog/flot/jquery.min.js","CrystalDiskInfo/CdiResource/AlertMail4.exe","CrystalDiskInfo/CdiResource/language/Finnish.lang","CrystalDiskInfo/CdiResource/language/Czech.lang","CrystalDiskInfo/DiskInfo.ini","CrystalDiskInfo/CdiResource/language/Bulgarian.lang","CrystalDiskInfo/CdiResource/opus/opusdec.exe","CrystalDiskInfo/CdiResource/AlertMail48.exe","CrystalDiskInfo/CdiResource/language/Ukrainian.lang","CrystalDiskInfo/CdiResource/language/Thai.lang","CrystalDiskInfo/CdiResource/language/Arabic.lang","CrystalDiskInfo/CdiResource/dialog/flot/excanvas.min.js","CrystalDiskInfo/CdiResource/language/Lithuanian.lang","CrystalDiskInfo/CdiResource/dialog/Graph.css","CrystalDiskInfo/CdiResource/language/Filipino.lang","CrystalDiskInfo/CdiResource/language/English.lang","CrystalDiskInfo/CdiResource/language/Spanish.lang","CrystalDiskInfo/CdiResource/language/French.lang","CrystalDiskInfo/CdiResource/dialog/Graph.html","CrystalDiskInfo/CdiResource/language/Portuguese.lang","CrystalDiskInfo/CdiResource/language/Korean.lang","CrystalDiskInfo/CdiResource/language/Norwegian.lang","CrystalDiskInfo/CdiResource/language/Russian.lang","CrystalDiskInfo/CdiResource/MimeKit.dll","CrystalDiskInfo/CdiResource/language/Slovenian.lang","CrystalDiskInfo/CdiResource/AlertMail.exe","CrystalDiskInfo/CdiResource/language/Polish.lang","CrystalDiskInfo/CdiResource/language/Danish.lang","CrystalDiskInfo/CdiResource/language/German2.lang","CrystalDiskInfo/CdiResource/language/Dutch.lang","CrystalDiskInfo/CdiResource/dialog/Graph8.html","CrystalDiskInfo/CdiResource/MailKit.dll","CrystalDiskInfo/CdiResource/language/Romanian.lang","CrystalDiskInfo/CdiResource/language/Turkish.lang","CrystalDiskInfo/CdiResource/language/Vietnamese.lang"],"CryptoPro_Scripts":["cspclean.exe","csp_reg_delete.bat"],"Activator":["kmsauto-net-1_5_4.zip"],"brauzer":["ChromeSetup.exe"],"ATOL":["Proshiwka/FirmwareUpdater_win_904506ad-38fd-4b4b-bf8f-5f95f05219fd.exe","Atol_USBCOM_v1.26.0_2017-05-18_setup.exe","Proshiwka/FirmwareUpdater_win_7dcf4f86-8324-4b91-8094-a4f1b5b0b14f.exe","Proshiwka/FirmwareUpdater_win_42a78baa-c808-43a4-8c40-30b4829d1e3b.exe","esm_1.6.2.0-windows-signed-setup.exe","DKKT/KKT10-10.10.8.23-windows32-setup-signed.exe","esm-lm-controller_1.6.1.0-windows-setup.exe","Proshiwka/FirmwareUpdater_win_50030d33-e6e7-404b-b3ab-fc4cb5665880.exe"]};
+var manifestVersion = '20260703.1127';
+var sortDirections = {};
+
+var errorDetails = [];
+(function(){
+    var rows = document.querySelectorAll('#mainTable tbody tr');
+    rows.forEach(function(row, i){
+        var attr = row.getAttribute('data-errors-details');
+        if(attr){ try { errorDetails[i] = JSON.parse(attr.replace(/&quot;/g, '"')); } catch(e) { errorDetails[i] = []; } }
+        else { errorDetails[i] = []; }
+    });
+})();
+
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+function sortTable(col){
+    var table=document.getElementById('mainTable');
+    var tbody=table.getElementsByTagName('tbody')[0];
+    var rows=Array.from(tbody.getElementsByTagName('tr'));
+    
+    if(!sortDirections[col])sortDirections[col]='asc';
+    else sortDirections[col]=sortDirections[col]==='asc'?'desc':'asc';
+    var dir=sortDirections[col];
+    
+    var headers=table.getElementsByTagName('th');
+    for(var i=0;i<headers.length;i++)headers[i].classList.remove('sorted');
+    headers[col].classList.add('sorted');
+    
+    rows.sort(function(a,b){
+        var va, vb;
+        if(col===0){ va=parseInt(a.cells[0].textContent); vb=parseInt(b.cells[0].textContent); }
+        else if(col===1){ va=a.getAttribute('data-computer')||''; vb=b.getAttribute('data-computer')||''; }
+        else if(col===2){ va=parseInt(a.getAttribute('data-status'))||0; vb=parseInt(b.getAttribute('data-status'))||0; }
+        else if(col===3){ va=a.getAttribute('data-version')||''; vb=b.getAttribute('data-version')||''; }
+        else if(col===4){ va=a.getAttribute('data-sync')||''; vb=b.getAttribute('data-sync')||''; }
+        else if(col===5){ va=parseFloat(a.getAttribute('data-when'))||0; vb=parseFloat(b.getAttribute('data-when'))||0; }
+        else if(col===6){ va=parseInt(a.getAttribute('data-files'))||0; vb=parseInt(b.getAttribute('data-files'))||0; }
+        else if(col===7){ va=parseFloat(a.getAttribute('data-match'))||0; vb=parseFloat(b.getAttribute('data-match'))||0; }
+        else if(col===8){ va=parseFloat(a.getAttribute('data-disk'))||0; vb=parseFloat(b.getAttribute('data-disk'))||0; }
+        else if(col===9){ va=a.getAttribute('data-health')||''; vb=b.getAttribute('data-health')||''; }
+        else if(col===10){ va=parseInt(a.getAttribute('data-errors'))||0; vb=parseInt(b.getAttribute('data-errors'))||0; }
+        else return 0;
+        
+        if(typeof va==='string')va=va.toLowerCase();
+        if(typeof vb==='string')vb=vb.toLowerCase();
+        if(va<vb)return dir==='asc'?-1:1;
+        if(va>vb)return dir==='asc'?1:-1;
+        return 0;
+    });
+    
+    rows.forEach(function(row,i){ row.cells[0].textContent=i+1; });
+    rows.forEach(function(row){ tbody.appendChild(row); });
+}
+
+function showManifestFiles(){
+    document.getElementById('modalTitle').textContent='📁 Файлы в манифесте (v'+manifestVersion+')';
+    var body=document.getElementById('fileModalBody');body.innerHTML='';
+    var folders=Object.keys(manifestTree).sort();var total=0;
+    for(var f=0;f<folders.length;f++){
+        var folder=folders[f];var files=manifestTree[folder];total+=files.length;
+        var fd=document.createElement('div');
+        fd.innerHTML='<div class="tree-folder">📁 '+esc(folder)+' ('+files.length+')</div>';
+        for(var i=0;i<files.length;i++){var d=document.createElement('div');d.className='tree-file';d.textContent='📄 '+files[i];fd.appendChild(d)}
+        body.appendChild(fd)
+    }
+    document.getElementById('modalFileCount').textContent=total;
+    document.getElementById('fileModal').style.display='block'
+}
+
+function showSmart(index){
+    document.getElementById('copySmartBtn').style.display='inline-block';
+    var arr=Array.isArray(data)?data:[data];
+    var r=arr[index];
+    if(!r){alert('Нет данных SMART');return}
+    document.getElementById('smartTitle').textContent='🔬 S.M.A.R.T. — '+r.ComputerName;
+    var model=r.DiskModel&&r.DiskModel!=='—'?r.DiskModel:'Нет данных';
+    var health=r.DiskHealth&&r.DiskHealth!=='—'?r.DiskHealth:'—';
+    var hp=r.DiskHealthPercent>0?' ('+r.DiskHealthPercent+'%)':'';
+    var temp=r.DiskTemp>0?r.DiskTemp+'°C':'—';
+    var hours=r.DiskPowerHours>0?r.DiskPowerHours.toLocaleString()+' ч ('+Math.round(r.DiskPowerHours/24)+' дн)':'—';
+    var pon=r.DiskPowerOnCount>0?r.DiskPowerOnCount.toLocaleString()+' раз':'—';
+    var read=r.DiskReadGB>0?r.DiskReadGB.toLocaleString()+' GB':'—';
+    var write=r.DiskWriteGB>0?r.DiskWriteGB.toLocaleString()+' GB':'—';
+    var hCls=health.toLowerCase()==='good'||health.toLowerCase()==='healthy'||health==='Хорошо'?'color:#4CAF50;':(health.toLowerCase()==='caution'||health.toLowerCase()==='warning'||health==='Осторожно'?'color:#ff9800;':'color:#f44336;');
+    var body='<table>';
+    body+='<tr><td>Модель:</td><td>'+esc(model)+'</td></tr>';
+    body+='<tr><td>Состояние:</td><td style="'+hCls+'">'+health+hp+'</td></tr>';
+    body+='<tr><td>Температура:</td><td>'+temp+'</td></tr>';
+    body+='<tr><td>Наработка:</td><td>'+hours+'</td></tr>';
+    body+='<tr><td>Включений:</td><td>'+pon+'</td></tr>';
+    body+='<tr><td>Прочитано:</td><td>'+read+'</td></tr>';
+    body+='<tr><td>Записано:</td><td>'+write+'</td></tr>';
+    body+='</table>';
+    document.getElementById('smartBody').innerHTML=body;
+    document.getElementById('smartModal').style.display='block';
+    window._smartCopyText=r.ComputerName+'\n'+model+'\n'+health+hp+'\n'+temp+'\n'+hours+'\nВключений: '+pon+'\nПрочитано: '+read+'\nЗаписано: '+write;
+}
+
+function showErrors(index){
+    document.getElementById('copySmartBtn').style.display='none';
+    var details = errorDetails[index] || [];
+    var computerName = data[index] ? data[index].ComputerName : 'Неизвестно';
+    document.getElementById('smartTitle').textContent = '⚠ Ошибки — ' + computerName;
+    var body = '<table>';
+    if(details.length === 0){ body += '<tr><td>Нет информации об ошибках</td></tr>'; }
+    else { details.forEach(function(e){ body += '<tr><td>• ' + esc(e) + '</td></tr>'; }); }
+    body += '</table>';
+    document.getElementById('smartBody').innerHTML = body;
+    document.getElementById('smartModal').style.display = 'block';
+}
+
+function copySmartData(){if(window._smartCopyText){navigator.clipboard.writeText(window._smartCopyText).then(function(){var btn=document.getElementById('copySmartBtn');btn.textContent='✅ Скопировано!';setTimeout(function(){btn.textContent='📋 Копировать'},2000)})}}
+function closeModal(id){document.getElementById(id).style.display='none'}
+window.onclick=function(e){if(e.target.classList.contains('modal')){e.target.style.display='none'}}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal').forEach(function(m){m.style.display='none'})}});
+</script></body></html>
